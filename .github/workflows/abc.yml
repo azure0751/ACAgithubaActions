@@ -52,6 +52,7 @@ jobs:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
           resourceGroupName: demo
           template: ARMTemplate/ACAdeploy.json
+          parameters: ARMTemplate/ACAdeploy_parameters.json
           
 
         # output containerName variable from template
