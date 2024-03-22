@@ -25,7 +25,7 @@ jobs:
         with:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
           resourceGroupName: demo
-          template: ./azuredeploy.json
+          template: ARMTemplate/storagedeploy.json
           parameters: storageAccountType=Standard_LRS
 
         # output containerName variable from template
