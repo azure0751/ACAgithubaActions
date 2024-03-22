@@ -43,13 +43,14 @@ jobs:
 
         # Deploy ARM template
       - name: Run ARM deploy
-        uses: azure/arm-deploy@v2
+        uses: azure/arm-deploy@v1
         with:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
-          resourceGroupName: $resourceGroup
+          resourceGroupName: demo1
           template: ARMTemplate/storagedeploy.json
           parameters: storageAccountType=Standard_LRS
 
+      - run: echo $resourceGroup
         # output containerName variable from template
       - run: echo ${{ steps.deploy.outputs.containerName }}
 
@@ -69,14 +70,14 @@ jobs:
 
         # Deploy ARM template
       - name: Run ARM deploy
-        uses: azure/arm-deploy@v2
+        uses: azure/arm-deploy@v1
         with:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
-          resourceGroupName: $resourceGroup
+          resourceGroupName: demo1
           template: ARMTemplate/ACAdeploy.json
           parameters: ARMTemplate/ACAdeploy_parameters.json
           
-
+      - run: echo $resourceGroup
         # output containerName variable from template
       - run: echo ${{ steps.deploy.outputs.containerName }}
 
