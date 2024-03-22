@@ -5,8 +5,8 @@ on:
     branches:
       - main
 env:
-  containerAppName: demo1
-  resourceGroup: demo1
+  containerAppName: demo
+  resourceGroup: demo
  
 
 jobs:
@@ -46,7 +46,7 @@ jobs:
         uses: azure/arm-deploy@v1
         with:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
-          resourceGroupName: demo1
+          resourceGroupName: demo
           template: ARMTemplate/storagedeploy.json
           parameters: storageAccountType=Standard_LRS
 
@@ -73,7 +73,7 @@ jobs:
         uses: azure/arm-deploy@v2
         with:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
-          resourceGroupName: demo1
+          resourceGroupName: demo
           template: ARMTemplate/ACAdeploy.json
           parameters: ARMTemplate/ACAdeploy_parameters.json
           
