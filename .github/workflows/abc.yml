@@ -5,8 +5,8 @@ on:
     branches:
       - main
 env:
-  containerAppName: Demo
-  resourceGroup: Demo
+  containerAppName: demo
+  resourceGroup: demo
 
 jobs:
 
