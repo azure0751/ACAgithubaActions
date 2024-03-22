@@ -7,7 +7,7 @@ on:
 env:
   containerAppName: demo
   resourceGroup: demo
-  SUBSCRIPTION_ID: abc
+ 
 
 jobs:
 
@@ -35,8 +35,7 @@ jobs:
         # Checkout code
       - uses: actions/checkout@main
 
-      - run: echo $SUBSCRIPTION_ID
-
+     
         # Log into Azure
       - uses: azure/login@v1
         with:
