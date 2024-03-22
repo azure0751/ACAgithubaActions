@@ -24,6 +24,7 @@ jobs:
       run: |
           az group list --out table
           SUBSCRIPTION_ID=$(az account show -o tsv --query id)
+          az group create --name $resourceGroup --location eastus
   
   
   Run-storage-ARM-Template:
