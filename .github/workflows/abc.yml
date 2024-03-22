@@ -6,7 +6,7 @@ on:
       - main
 env:
   containerAppName: demo
-  resourceGroup: demo
+  resourceGroup: demo1
  
 
 jobs:
@@ -72,7 +72,7 @@ jobs:
         uses: azure/arm-deploy@v1
         with:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
-          resourceGroupName: demo
+          resourceGroupName: $resourceGroup
           template: ARMTemplate/ACAdeploy.json
           parameters: ARMTemplate/ACAdeploy_parameters.json
           
