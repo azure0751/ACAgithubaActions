@@ -3,10 +3,10 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "containerAppName": {
-            "value": "demo1"
+            "value": "demo"
         },
         "containerAppEnvName": {
-            "value": "demo1-env"
+            "value": "demo-env"
         },
         "containerAppLogAnalyticsName": {
             "value": "demo1-log222024abc1"
