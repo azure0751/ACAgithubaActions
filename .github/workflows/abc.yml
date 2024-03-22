@@ -7,7 +7,7 @@ on:
 
 jobs:
 
-  Run-ARM-Template:
+  Run-storage-ARM-Template:
       runs-on: ubuntu-latest
       steps:
 
@@ -32,8 +32,34 @@ jobs:
       - run: echo ${{ steps.deploy.outputs.containerName }}
 
 
+  Run-ACA-ARM-Template:
+      needs: Run-storage-ARM-Template
+      runs-on: ubuntu-latest
+      steps:
+
+        # Checkout code
+      - uses: actions/checkout@main
+
+        # Log into Azure
+      - uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+        # Deploy ARM template
+      - name: Run ARM deploy
+        uses: azure/arm-deploy@v1
+        with:
+          subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
+          resourceGroupName: demo
+          template: ARMTemplate/ACAdeploy.json
+          
+
+        # output containerName variable from template
+      - run: echo ${{ steps.deploy.outputs.containerName }}
+
+
   Build-docker-file-and-deploy:
-    needs: Run-ARM-Template
+    needs: [Run-storage-ARM-Template,Run-ACA-ARM-Template]
     runs-on: ubuntu-latest
 
     steps:
