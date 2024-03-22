@@ -46,7 +46,7 @@ jobs:
         uses: azure/arm-deploy@v1
         with:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
-          resourceGroupName: $resourceGroup
+          resourceGroupName: demo1
           template: ARMTemplate/storagedeploy.json
           parameters: storageAccountType=Standard_LRS
 
@@ -72,7 +72,7 @@ jobs:
         uses: azure/arm-deploy@v1
         with:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
-          resourceGroupName: $resourceGroup
+          resourceGroupName: demo1
           template: ARMTemplate/ACAdeploy.json
           parameters: ARMTemplate/ACAdeploy_parameters.json
           
