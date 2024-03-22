@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+env:
+  containerAppName: Demo
+  resourceGroup: Demo
 
 jobs:
 
@@ -78,5 +81,5 @@ jobs:
           acrName: tinkushuklaregistry
           acrUsername: ${{ secrets.REGISTRY_USERNAME }}
           acrPassword: ${{ secrets.REGISTRY_PASSWORD }}
-          containerAppName: demo
-          resourceGroup: demo
+          containerAppName: $containerAppName
+          resourceGroup: $resourceGroup
