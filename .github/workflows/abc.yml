@@ -10,8 +10,23 @@ env:
 
 jobs:
 
+  Run-AZ-CLI-Commnds:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Azure Login
+      uses: azure/login@v2
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Azure CLI script
+      run: |
+          az group list --out table
+  
+  
   Run-storage-ARM-Template:
-      runs-on: ubuntu-latest
+      needs: Run-AZ-CLI-Commnds
+      runs-on: Run-AZ-CLI-Commnds
       steps:
 
         # Checkout code
