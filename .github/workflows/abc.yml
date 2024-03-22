@@ -43,7 +43,7 @@ jobs:
 
         # Deploy ARM template
       - name: Run ARM deploy
-        uses: azure/arm-deploy@v1
+        uses: azure/arm-deploy@v2
         with:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
           resourceGroupName: $resourceGroup
