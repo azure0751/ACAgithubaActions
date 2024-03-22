@@ -28,7 +28,7 @@ jobs:
   
   
   Run-storage-ARM-Template:
-      needs: Run-AZ-CLI-Commnds
+      # needs: Run-AZ-CLI-Commnds
       runs-on: ubuntu-latest
       steps:
 
@@ -55,7 +55,7 @@ jobs:
 
 
   Run-ACA-ARM-Template:
-      needs: Run-storage-ARM-Template
+      # needs: Run-storage-ARM-Template
       runs-on: ubuntu-latest
       steps:
 
