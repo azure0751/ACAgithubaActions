@@ -22,5 +22,7 @@ jobs:
         with:
           appSourcePath: ${{ github.workspace }}/src
           acrName: tinkushuklaregistry
+          acrUsername: ${{ secrets.REGISTRY_USERNAME }}
+          acrPassword: ${{ secrets.REGISTRY_PASSWORD }}
           containerAppName: demo
           resourceGroup: demo
