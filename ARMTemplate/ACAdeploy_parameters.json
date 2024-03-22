@@ -3,13 +3,13 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "containerAppName": {
-            "value": "demo"
+            "value": "demo1"
         },
         "containerAppEnvName": {
-            "value": "demo-env"
+            "value": "demo1-env"
         },
         "containerAppLogAnalyticsName": {
-            "value": "demo-log222024abc1"
+            "value": "demo1-log222024abc1"
         },
         "location": {
             "value": "eastus"
