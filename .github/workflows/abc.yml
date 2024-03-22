@@ -7,6 +7,7 @@ on:
 env:
   containerAppName: demo
   resourceGroup: demo
+  SUBSCRIPTION_ID: abc
 
 jobs:
 
@@ -22,6 +23,7 @@ jobs:
     - name: Azure CLI script
       run: |
           az group list --out table
+          SUBSCRIPTION_ID=$(az account show -o tsv --query id)
   
   
   Run-storage-ARM-Template:
@@ -31,6 +33,8 @@ jobs:
 
         # Checkout code
       - uses: actions/checkout@main
+
+      - run: echo $SUBSCRIPTION_ID
 
         # Log into Azure
       - uses: azure/login@v1
