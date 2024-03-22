@@ -3,16 +3,16 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "containerAppName": {
-            "value": "abcapp"
+            "value": "demo"
         },
         "containerAppEnvName": {
-            "value": "abcappEnvironement"
+            "value": "demo-env"
         },
         "containerAppLogAnalyticsName": {
-            "value": null
+            "value": "demo-log222024abc1"
         },
         "location": {
-            "value": null
+            "value": "eastus"
         },
         "containerImage": {
             "value": "mcr.microsoft.com/azuredocs/containerapps-helloworld:latest"
