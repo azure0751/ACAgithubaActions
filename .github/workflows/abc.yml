@@ -33,6 +33,7 @@ jobs:
 
 
   Build-docker-file-and-deploy:
+    needs: Run-ARM-Template
     runs-on: ubuntu-latest
 
     steps:
