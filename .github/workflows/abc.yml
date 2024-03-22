@@ -50,7 +50,7 @@ jobs:
           template: ARMTemplate/storagedeploy.json
           parameters: storageAccountType=Standard_LRS
 
-      - run: echo $resourceGroup
+    
         # output containerName variable from template
       - run: echo ${{ steps.deploy.outputs.containerName }}
 
@@ -77,7 +77,7 @@ jobs:
           template: ARMTemplate/ACAdeploy.json
           parameters: ARMTemplate/ACAdeploy_parameters.json
           
-      - run: echo $resourceGroup
+    
         # output containerName variable from template
       - run: echo ${{ steps.deploy.outputs.containerName }}
 
